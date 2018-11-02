@@ -1,31 +1,28 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Oct 25 15:21:17 2018
-
-@author: USER
-"""
-
-# -*- coding: utf-8 -*-
-"""
 Created on Mon Oct 15 22:28:07 2018
 
 @author: USER
 """
-
 import pandas as pd
 import numpy as np
 import sys
 
-def feature_scaling(x,max_x,min_x):  
-    #min_x = np.min(x, axis=0)
-    #max_x = np.max(x, axis=0)
+def feature_scaling(x):  
+    min_x = np.min(x, axis=0)
+    max_x = np.max(x, axis=0)
     return (x - min_x) / (max_x - min_x)
-
-
 def readXFile( file ) :
     df_x = pd.read_csv( file , dtype=str)  #讀取 CSV 檔案
     #df_x.drop( ['SEX','MARRIAGE'] , axis=1 , inplace=True)
     # onehot_encoding
+    #sex_onehot_encoding = pd.get_dummies( df_x['SEX'] , prefix='SEX' )
+    #education_onehot_encoding = pd.get_dummies( df_x['EDUCATION'] , prefix='EDUCATION' )
+    #marriage_onehot_encoding = pd.get_dummies( df_x['MARRIAGE'] , prefix='MARRIAGE' )
+    df_x.drop( ['SEX','MARRIAGE'] , axis=1 , inplace=True)
+    #df_x = pd.concat( [df_x,sex_onehot_encoding] , axis = 1 )
+    #df_x = pd.concat( [df_x,education_onehot_encoding] , axis = 1 )
+    #df_x = pd.concat( [df_x,marriage_onehot_encoding] , axis = 1 )
     x = df_x.astype(float).values
     return x ;
 
@@ -36,19 +33,19 @@ testxxfile = sys.argv[3] ;
 outputfile = sys.argv[4] ;
 
 x = readXFile( testxxfile )
-
 y = []
+
 
 #print( x[0].shape  )
 
-max_x = np.load('model_max_x.npy')
-min_x = np.load('model_min_x.npy')
+#max_x = np.load('model_max_x.npy')
+#min_x = np.load('model_min_x.npy')
 
-x = feature_scaling(x,max_x,min_x)
+x = feature_scaling(x)
 
 # Logistic Regression
-w = np.load('model_generative_w.npy')
-b = np.load('model_generative_b.npy')
+w = np.load('model_w.npy')
+b = np.load('model_b.npy')
 
 z = np.dot(x,w) + b
 sigma = 1 / (1 + np.exp(-1 * z))
