@@ -1,5 +1,6 @@
 # ML2018FALL
 
+* HW0 - Environment Setup : [Link](https://docs.google.com/presentation/d/1FXGKzeapNtSOrLf_L5tPV-EtX80nqlitgqSr0E46DQk/edit?usp=sharing)
 * HW1 - PM2.5 Prediction : [Link](https://docs.google.com/presentation/d/1fGj_heYognRaohUJrHEVkS3BDLOS0uutpnTrOiMqhSc/edit?fbclid=IwAR01CN53Gy1ZfImeL95dQJWj7AP0jaR5fyl4pkniA1x5FGBO5wag9XgegYM#slide=id.g428cc584f5_0_0)
 * HW2 - Credit Card Payment Prediction : [Link](https://docs.google.com/presentation/d/1uXFgSATpkR3jymcjzds4epiCCl9nQal4GpU_h7G-nUE/edit#slide=id.g428cc584f5_0_0)
 * HW3 - Image Sentiment Classification : [Link](https://docs.google.com/presentation/d/1c68f8K0H9lOiQGGbApNGTdJfAXc9OAF5sBQBURsBvTg/edit?fbclid=IwAR1pXZTbWPTkOw1XRDKyYlozK2aPk17dSlSuQBBjJu7tJI7LMHyWs8rVB7A#slide=id.p)
